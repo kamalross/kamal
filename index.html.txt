@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Analyzer | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #0a0a0c; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glow-blue { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+        .chess-pattern { background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 20px 20px; }
+    </style>
+</head>
+<body class="chess-pattern">
+
+    <header class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+        <div class="mb-6 p-3 rounded-full border-2 border-blue-500 glow-blue">
+            <i class="fas fa-chess-knight text-4xl text-blue-500"></i>
+        </div>
+        <h1 class="text-6xl font-extrabold tracking-tighter mb-4">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                PRO-ANALYZER
+            </span>
+        </h1>
+        <p class="text-xl text-gray-400 max-w-2xl leading-relaxed">
+            Full-Stack Developer & Cybersecurity Engineer. <br>
+            Powered by <span class="text-white font-bold text-blue-400 italic">Photographic Memory</span> and Strategic Grandmaster Logic.
+        </p>
+        <div class="mt-10 flex gap-4">
+            <a href="#projects" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg font-bold">View System Logs</a>
+            <a href="#contact" class="px-8 py-3 glass hover:bg-white hover:text-black transition rounded-lg font-bold">Initialize Contact</a>
+        </div>
+    </header>
+
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center italic">"The Human Hardware"</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass p-8 rounded-2xl">
+                <i class="fas fa-eye text-blue-400 text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Photographic Memory</h3>
+                <p class="text-gray-400 text-sm">Instant visual retention of complex codebases and architectural diagrams. Zero latency in information retrieval.</p>
+            </div>
+            <div class="glass p-8 rounded-2xl">
+                <i class="fas fa-ear-listen text-blue-400 text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Auditory Precision</h3>
+                <p class="text-gray-400 text-sm">Perfect recall of technical requirements and stakeholder briefings. Every spoken detail is logged and indexed.</p>
+            </div>
+            <div class="glass p-8 rounded-2xl border-blue-500/30 border">
+                <i class="fas fa-brain text-blue-400 text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Chess-Driven Logic</h3>
+                <p class="text-gray-400 text-sm">Analyzing software moves 10 steps ahead. Predicting vulnerabilities before they are even written into code.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-black/50">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-3xl font-bold mb-6 italic"><i class="fas fa-code mr-3"></i>Full-Stack Engineering</h2>
+                <p class="text-gray-400 mb-6">Building scalable, resilient applications with a focus on clean architecture and high-performance logic.</p>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <span class="px-3 py-1 bg-blue-900/30 rounded text-blue-300">React/Next.js</span>
+                    <span class="px-3 py-1 bg-blue-900/30 rounded text-blue-300">Node.js</span>
+                    <span class="px-3 py-1 bg-blue-900/30 rounded text-blue-300">PostgreSQL</span>
+                    <span class="px-3 py-1 bg-blue-900/30 rounded text-blue-300">Python</span>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-6 italic"><i class="fas fa-shield-halved mr-3"></i>Cybersecurity</h2>
+                <p class="text-gray-400 mb-6">Securing the digital frontier. Specialized in penetration testing, threat hunting, and system hardening.</p>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <span class="px-3 py-1 bg-emerald-900/30 rounded text-emerald-300">Pen-Testing</span>
+                    <span class="px-3 py-1 bg-emerald-900/30 rounded text-emerald-300">Network Hardening</span>
+                    <span class="px-3 py-1 bg-emerald-900/30 rounded text-emerald-300">Forensics</span>
+                    <span class="px-3 py-1 bg-emerald-900/30 rounded text-emerald-300">Encryption Protocols</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-600 text-sm border-t border-white/5">
+        <p>&copy; 2026 PRO-ANALYZER. Built for Maximum Efficiency.</p>
+    </footer>
+
+</body>
+</html>
