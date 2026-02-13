@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAMAL | System Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syncopate:wght@400;700&display=swap');
+        
+        body { 
+            background-color: #000000; 
+            color: #00FF00; 
+            font-family: 'Space Mono', monospace;
+            overflow-x: hidden;
+        }
+        .matrix-text { font-family: 'Syncopate', sans-serif; }
+        .border-green { border: 1px solid #00FF00; }
+        .bg-green-glow { box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); }
+        .glitch:hover { text-shadow: 2px 0 #fff, -2px 0 #00FF00; }
+        .stat-card { transition: all 0.3s ease; border-left: 4px solid #00FF00; }
+        .stat-card:hover { background: #001100; transform: translateX(10px); }
+        hr { border-color: #004400; }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <header class="mb-20">
+        <p class="text-xs mb-2 opacity-70 tracking-widest">[ SYSTEM STATUS: ACTIVE ]</p>
+        <h1 class="matrix-text text-7xl md:text-9xl font-bold uppercase glitch tracking-tighter">
+            KAMAL
+        </h1>
+        <div class="grid md:grid-cols-2 mt-6">
+            <p class="text-xl leading-relaxed">
+                Full-Stack Developer // Cybersecurity Engineer // Strategic Grandmaster. 
+                <br><span class="opacity-50 text-sm">Deploying high-level logic and defensive architecture.</span>
+            </p>
+            <div class="md:text-right mt-4 md:mt-0">
+                <p>[ 18 YRS OLD ]</p>
+                <p>[ ENS UNIVERSITY - 1st YEAR ]</p>
+                <p>[ ALGERIA ]</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="grid lg:grid-cols-3 gap-12">
+        
+        <div class="space-y-10">
+            <section>
+                <h2 class="text-2xl font-bold mb-6 border-b border-green pb-2">01. COGNITIVE HARDWARE</h2>
+                <div class="space-y-4">
+                    <div class="stat-card p-4">
+                        <h3 class="font-bold underline">NEURAL RECALL</h3>
+                        <p class="text-sm">Photographic & Auditory Memory. Capable of mapping codebases and retaining complex literature upon single exposure.</p>
+                    </div>
+                    <div class="stat-card p-4">
+                        <h3 class="font-bold underline">BIO-CALCULATION</h3>
+                        <p class="text-sm">High-speed mental arithmetic and critical analysis. Behavioral profiling (reading people) executed in seconds.</p>
+                    </div>
+                    <div class="stat-card p-4">
+                        <h3 class="font-bold underline">LINGUISTICS</h3>
+                        <p class="text-sm">English Level: C1 Mastery (Academic Excellence at ENS University).</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-6 border-b border-green pb-2">02. ACADEMIC DOMINANCE</h2>
+                <ul class="list-none space-y-2 text-sm">
+                    <li>> BAC Score: <span class="bg-green-800 text-black px-1 font-bold">16.5</span></li>
+                    <li>> Rank: 1st in Institution</li>
+                    <li>> Current: ENS University Student</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="space-y-10 lg:col-span-1">
+            <section>
+                <h2 class="text-2xl font-bold mb-6 border-b border-green pb-2">03. TECHNICAL STACK</h2>
+                <div class="border-green p-6 rounded-sm bg-green-glow">
+                    <p class="font-bold mb-2 uppercase">Full-Stack Engineering</p>
+                    <p class="text-xs mb-4">React, Node.js, Python, SQL, Cloud Architecture.</p>
+                    <p class="font-bold mb-2 uppercase text-white">Ethical Hacking & OS</p>
+                    <p class="text-xs mb-4">Linux Kernel Specialist, Penetration Testing, Network Defense Protocols (OSCP Level Skillset).</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold mb-6 border-b border-green pb-2">04. STRATEGIC MASTERY</h2>
+                <div class="p-4 border border-dashed border-green">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-bold text-xl">CHESS MASTER</span>
+                        <span>[ 2000+ ELO ]</span>
+                    </div>
+                    <p class="text-xs italic">7+ years of competitive experience. Expert in Sicilian Defense and complex endgame theory.</p>
+                </div>
+                <div class="mt-6">
+                    <h3 class="font-bold italic underline">CINEPHILE & LITERARY EXPERT</h3>
+                    <p class="text-sm mt-2 leading-relaxed">Advanced analysis of geopolitics and cinematography. Deep knowledge of classical and modern literature, ranging from chess theory to geopolitical strategy.</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="space-y-10">
+            <section>
+                <h2 class="text-2xl font-bold mb-6 border-b border-green pb-2">05. KINETIC ASSETS</h2>
+                <div class="bg-green-900/20 p-6 border-green">
+                    <div class="text-4xl font-bold mb-2 tracking-widest">6 - 0</div>
+                    <p class="text-xs uppercase tracking-tighter font-bold">MMA Amateur Record (Undefeated)</p>
+                    <hr class="my-4">
+                    <ul class="text-sm space-y-3">
+                        <li><i class="fas fa-check-double mr-2"></i>WRESTLING: Elite Tier</li>
+                        <li><i class="fas fa-check-double mr-2"></i>JUDO: Unbeatable Clinch/Throws</li>
+                        <li><i class="fas fa-check-double mr-2"></i>COMBAT ARTIST: Advanced Striking</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="border-green p-4">
+                <h2 class="text-xl font-bold mb-4 italic">CORE PHILOSOPHY</h2>
+                <p class="text-xs leading-loose">
+                    "Analyze. Adapt. Execute. Whether on the board, in the cage, or within the terminal, victory is the only logical outcome. My photographic memory and critical thinking are the tools; efficiency is the result."
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <footer class="mt-20 pt-10 border-t border-green text-center text-xs opacity-50">
+        <p>ENCRYPTED PORTFOLIO V2.0 // KAMAL ROSS // 2026</p>
+    </footer>
+
+</body>
+</html>
