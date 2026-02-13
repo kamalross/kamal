@@ -3,132 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAMAL | System Architect</title>
+    <title>KAMAL | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syncopate:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
         
-        body { 
-            background-color: #000000; 
-            color: #00FF00; 
-            font-family: 'Space Mono', monospace;
-            overflow-x: hidden;
+        :root {
+            --bg: #050505;
+            --card: #0f0f0f;
+            --accent: #00ff41; /* Pure Matrix Green */
+            --text: #e0e0e0;
         }
-        .matrix-text { font-family: 'Syncopate', sans-serif; }
-        .border-green { border: 1px solid #00FF00; }
-        .bg-green-glow { box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); }
-        .glitch:hover { text-shadow: 2px 0 #fff, -2px 0 #00FF00; }
-        .stat-card { transition: all 0.3s ease; border-left: 4px solid #00FF00; }
-        .stat-card:hover { background: #001100; transform: translateX(10px); }
-        hr { border-color: #004400; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .bento-card {
+            background: var(--card);
+            border: 1px solid #1a1a1a;
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .bento-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(0, 255, 65, 0.2);
+        }
+
+        .green-gradient-text {
+            background: linear-gradient(to right, #00ff41, #008f11);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge {
+            background: rgba(0, 255, 65, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 1px solid rgba(0, 255, 65, 0.2);
+        }
+
+        code { font-family: 'JetBrains Mono', monospace; }
     </style>
 </head>
-<body class="p-4 md:p-10">
+<body class="antialiased">
 
-    <header class="mb-20">
-        <p class="text-xs mb-2 opacity-70 tracking-widest">[ SYSTEM STATUS: ACTIVE ]</p>
-        <h1 class="matrix-text text-7xl md:text-9xl font-bold uppercase glitch tracking-tighter">
-            KAMAL
-        </h1>
-        <div class="grid md:grid-cols-2 mt-6">
-            <p class="text-xl leading-relaxed">
-                Full-Stack Developer // Cybersecurity Engineer // Strategic Grandmaster. 
-                <br><span class="opacity-50 text-sm">Deploying high-level logic and defensive architecture.</span>
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <nav class="flex justify-between items-center mb-16">
+            <div class="text-2xl font-extrabold tracking-tighter">K<span class="text-[#00ff41]">.</span></div>
+            <div class="flex gap-8 text-sm font-medium opacity-60">
+                <a href="#" class="hover:text-[#00ff41] hover:opacity-100">Intelligence</a>
+                <a href="#" class="hover:text-[#00ff41] hover:opacity-100">Tactics</a>
+                <a href="#" class="hover:text-[#00ff41] hover:opacity-100">Contact</a>
+            </div>
+        </nav>
+
+        <header class="mb-12">
+            <div class="inline-block badge mb-4">AVAILABLE FOR HIGH-LEVEL MISSIONS</div>
+            <h1 class="text-7xl md:text-8xl font-extrabold tracking-tight mb-6">
+                I'm <span class="green-gradient-text italic">Kamal.</span>
+            </h1>
+            <p class="text-xl md:text-2xl opacity-60 max-w-2xl leading-relaxed">
+                A 18-year-old Full-Stack Developer and Cybersecurity Engineer specialized in 
+                <span class="text-white">pattern recognition</span> and <span class="text-white">strategic dominance</span>.
             </p>
-            <div class="md:text-right mt-4 md:mt-0">
-                <p>[ 18 YRS OLD ]</p>
-                <p>[ ENS UNIVERSITY - 1st YEAR ]</p>
-                <p>[ ALGERIA ]</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <div class="md:col-span-8 bento-card flex flex-col justify-between overflow-hidden relative">
+                <div>
+                    <i class="fa-solid fa-shield-virus text-4xl text-[#00ff41] mb-6"></i>
+                    <h2 class="text-3xl font-bold mb-4">Cybersecurity & Ethical Hacking</h2>
+                    <p class="opacity-60 text-lg">Expert in system hardening and vulnerability analysis. I treat codebases like a chess board—anticipating the attacker's next three moves.</p>
+                </div>
+                <div class="mt-8 flex gap-3 flex-wrap">
+                    <span class="badge">Penetration Testing</span>
+                    <span class="badge">OS Hardening</span>
+                    <span class="badge">Network Defense</span>
+                </div>
+            </div>
+
+            <div class="md:col-span-4 bento-card bg-gradient-to-br from-[#0f0f0f] to-[#050505]">
+                <h3 class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-2">Strategy</h3>
+                <div class="text-5xl font-extrabold text-[#00ff41] mb-2">2000+</div>
+                <div class="text-xl font-bold mb-4 italic">Elo Chess Master</div>
+                <p class="text-sm opacity-50">7 years of refining logic, patience, and critical thinking. My mind is my primary weapon.</p>
+            </div>
+
+            <div class="md:col-span-4 bento-card">
+                <h3 class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-4">Education</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="text-[#00ff41] font-bold text-2xl">16.5 BAC</div>
+                        <p class="text-sm opacity-60 font-medium">Ranked #1 in Institution</p>
+                    </div>
+                    <div>
+                        <div class="text-white font-bold">ENS University</div>
+                        <p class="text-sm opacity-60">English Literature (C1 Level)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-5 bento-card group">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-2xl font-bold">MMA Amateur <br><span class="text-[#00ff41]">Undefeated 6-0</span></h3>
+                    <div class="bg-[#00ff41] text-black h-12 w-12 rounded-full flex items-center justify-center font-bold">
+                        6:0
+                    </div>
+                </div>
+                <p class="opacity-60 text-sm leading-relaxed mb-4">Unbeatable in Wrestling and Judo. Combat is the ultimate test of my speed and quick calculation.</p>
+            </div>
+
+            <div class="md:col-span-3 bento-card bg-[#00ff41] text-black">
+                <h3 class="font-extrabold text-xs uppercase tracking-widest mb-4 opacity-70">Hardware</h3>
+                <ul class="font-bold space-y-2 text-sm">
+                    <li>? Photographic Memory</li>
+                    <li>? Auditory Recall</li>
+                    <li>? Geo-Political Expert</li>
+                    <li>? Cinephile</li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-12 bento-card">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div class="md:max-w-md">
+                        <h3 class="text-2xl font-bold mb-2 italic">Full-Stack Development</h3>
+                        <p class="opacity-50 text-sm">Building software that is as efficient as it is secure. Engineering from the UI down to the database logic.</p>
+                    </div>
+                    <div class="flex gap-4 overflow-x-auto pb-2">
+                        <code class="text-[#00ff41] bg-black/50 p-3 rounded">React.js</code>
+                        <code class="text-[#00ff41] bg-black/50 p-3 rounded">Node.js</code>
+                        <code class="text-[#00ff41] bg-black/50 p-3 rounded">Python</code>
+                        <code class="text-[#00ff41] bg-black/50 p-3 rounded">PostgreSQL</code>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
 
-    <div class="grid lg:grid-cols-3 gap-12">
-        
-        <div class="space-y-10">
-            <section>
-                <h2 class="text-2xl font-bold mb-6 border-b border-green pb-2">01. COGNITIVE HARDWARE</h2>
-                <div class="space-y-4">
-                    <div class="stat-card p-4">
-                        <h3 class="font-bold underline">NEURAL RECALL</h3>
-                        <p class="text-sm">Photographic & Auditory Memory. Capable of mapping codebases and retaining complex literature upon single exposure.</p>
-                    </div>
-                    <div class="stat-card p-4">
-                        <h3 class="font-bold underline">BIO-CALCULATION</h3>
-                        <p class="text-sm">High-speed mental arithmetic and critical analysis. Behavioral profiling (reading people) executed in seconds.</p>
-                    </div>
-                    <div class="stat-card p-4">
-                        <h3 class="font-bold underline">LINGUISTICS</h3>
-                        <p class="text-sm">English Level: C1 Mastery (Academic Excellence at ENS University).</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold mb-6 border-b border-green pb-2">02. ACADEMIC DOMINANCE</h2>
-                <ul class="list-none space-y-2 text-sm">
-                    <li>> BAC Score: <span class="bg-green-800 text-black px-1 font-bold">16.5</span></li>
-                    <li>> Rank: 1st in Institution</li>
-                    <li>> Current: ENS University Student</li>
-                </ul>
-            </section>
-        </div>
-
-        <div class="space-y-10 lg:col-span-1">
-            <section>
-                <h2 class="text-2xl font-bold mb-6 border-b border-green pb-2">03. TECHNICAL STACK</h2>
-                <div class="border-green p-6 rounded-sm bg-green-glow">
-                    <p class="font-bold mb-2 uppercase">Full-Stack Engineering</p>
-                    <p class="text-xs mb-4">React, Node.js, Python, SQL, Cloud Architecture.</p>
-                    <p class="font-bold mb-2 uppercase text-white">Ethical Hacking & OS</p>
-                    <p class="text-xs mb-4">Linux Kernel Specialist, Penetration Testing, Network Defense Protocols (OSCP Level Skillset).</p>
-                </div>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold mb-6 border-b border-green pb-2">04. STRATEGIC MASTERY</h2>
-                <div class="p-4 border border-dashed border-green">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-bold text-xl">CHESS MASTER</span>
-                        <span>[ 2000+ ELO ]</span>
-                    </div>
-                    <p class="text-xs italic">7+ years of competitive experience. Expert in Sicilian Defense and complex endgame theory.</p>
-                </div>
-                <div class="mt-6">
-                    <h3 class="font-bold italic underline">CINEPHILE & LITERARY EXPERT</h3>
-                    <p class="text-sm mt-2 leading-relaxed">Advanced analysis of geopolitics and cinematography. Deep knowledge of classical and modern literature, ranging from chess theory to geopolitical strategy.</p>
-                </div>
-            </section>
-        </div>
-
-        <div class="space-y-10">
-            <section>
-                <h2 class="text-2xl font-bold mb-6 border-b border-green pb-2">05. KINETIC ASSETS</h2>
-                <div class="bg-green-900/20 p-6 border-green">
-                    <div class="text-4xl font-bold mb-2 tracking-widest">6 - 0</div>
-                    <p class="text-xs uppercase tracking-tighter font-bold">MMA Amateur Record (Undefeated)</p>
-                    <hr class="my-4">
-                    <ul class="text-sm space-y-3">
-                        <li><i class="fas fa-check-double mr-2"></i>WRESTLING: Elite Tier</li>
-                        <li><i class="fas fa-check-double mr-2"></i>JUDO: Unbeatable Clinch/Throws</li>
-                        <li><i class="fas fa-check-double mr-2"></i>COMBAT ARTIST: Advanced Striking</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="border-green p-4">
-                <h2 class="text-xl font-bold mb-4 italic">CORE PHILOSOPHY</h2>
-                <p class="text-xs leading-loose">
-                    "Analyze. Adapt. Execute. Whether on the board, in the cage, or within the terminal, victory is the only logical outcome. My photographic memory and critical thinking are the tools; efficiency is the result."
-                </p>
-            </section>
-        </div>
+        <footer class="mt-20 text-center opacity-30 text-xs tracking-[0.3em]">
+            DESIGNED BY PRO-ANALYZER // 2026
+        </footer>
     </div>
 
-    <footer class="mt-20 pt-10 border-t border-green text-center text-xs opacity-50">
-        <p>ENCRYPTED PORTFOLIO V2.0 // KAMAL ROSS // 2026</p>
-    </footer>
+</body>
+</html>
+<div class="md:col-span-7 bento-card border-[#00ff41]/30">
+                <h3 class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-4">The Logic Engine</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="text-[#00ff41] mt-1"><i class="fas fa-microchip"></i></div>
+                        <div>
+                            <h4 class="font-bold">Pattern Recognition</h4>
+                            <p class="text-xs opacity-60">Utilizing photographic memory to identify anomalies in network traffic and code structures instantly.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-[#00ff41] mt-1"><i class="fas fa-chess-knight"></i></div>
+                        <div>
+                            <h4 class="font-bold">Strategic Forecasting</h4>
+                            <p class="text-xs opacity-60">Applying ELO 2000+ chess principles to cybersecurity; defending systems by predicting 10+ moves of attacker behavior.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-5 bento-card bg-gradient-to-br from-[#050505] to-[#0a1a0a]">
+                <h3 class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-4">Secondary Intel</h3>
+                <div class="text-xl font-bold mb-2 text-white">Geopolitical Analyst</div>
+                <p class="text-xs opacity-50 leading-relaxed italic">
+                    "Analyzing global power shifts with the same precision as a kernel exploit. Understanding the world's architecture is key to securing its future."
+                </p>
+                <div class="mt-4 flex gap-2">
+                    <span class="text-[10px] border border-[#00ff41]/50 px-2 py-1 rounded">International Relations</span>
+                    <span class="text-[10px] border border-[#00ff41]/50 px-2 py-1 rounded">Strategic Intelligence</span>
+                </div>
+            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAMAL | The Pro-Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        :root {
+            --bg: #030303;
+            --card: #0a0a0a;
+            --accent: #00ff41;
+            --text: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .bento-card {
+            background: var(--card);
+            border: 1px solid #1a1a1a;
+            border-radius: 28px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .bento-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
+        }
+
+        .green-glow { color: var(--accent); text-shadow: 0 0 10px rgba(0, 255, 65, 0.5); }
+        .stat-label { font-size: 0.7rem; font-weight: 800; color: #444; text-transform: uppercase; letter-spacing: 0.1em; }
+    </style>
+</head>
+<body class="p-4 md:p-10 antialiased">
+
+    <div class="max-w-7xl mx-auto">
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+            <div>
+                <h1 class="text-8xl font-extrabold tracking-tighter mb-2">KAMAL<span class="text-[#00ff41]">.</span></h1>
+                <p class="text-xl opacity-50">Full-Stack Engineer & Strategic Asset</p>
+            </div>
+            <div class="flex gap-4">
+                <div class="text-right">
+                    <p class="stat-label">Status</p>
+                    <p class="font-bold text-[#00ff41]">Undefeated (6-0)</p>
+                </div>
+                <div class="text-right border-l border-white/10 pl-4">
+                    <p class="stat-label">Location</p>
+                    <p class="font-bold">ENS University</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <div class="md:col-span-8 bento-card relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-100 transition-opacity">
+                    <i class="fas fa-brain text-8xl text-[#00ff41]"></i>
+                </div>
+                <h3 class="stat-label mb-4">Neural Architecture</h3>
+                <h2 class="text-4xl font-extrabold mb-6 italic">High-Speed Logic & Perfect Recall</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-[#00ff41] font-bold mb-2 underline">Sensory Memory</h4>
+                        <p class="text-sm opacity-60">Leveraging **Photographic** and **Auditory** memory to index complex data structures and technical manuals instantly.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-[#00ff41] font-bold mb-2 underline">Analysis Latency</h4>
+                        <p class="text-sm opacity-60">Elite-tier critical thinking; capable of **analyzing human behavior** and social patterns in seconds.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-4 bento-card border-[#00ff41]/20">
+                <i class="fas fa-chess-knight text-3xl text-[#00ff41] mb-6"></i>
+                <h3 class="stat-label mb-2">Strategy</h3>
+                <div class="text-6xl font-black mb-2">2000+</div>
+                <p class="text-xl font-bold mb-2">Elo Chess Master</p>
+                <p class="text-xs opacity-50">7+ years of competitive mastery. Expert in endgame theory and tactical calculation.</p>
+            </div>
+
+            <div class="md:col-span-4 bento-card bg-gradient-to-b from-[#0a0a0a] to-[#001a05]">
+                <h3 class="stat-label mb-6 text-white">Academic Record</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="text-4xl font-bold">16.5 BAC</div>
+                        <p class="text-[#00ff41] text-xs font-bold mt-1">#1 RANKED IN INSTITUTION</p>
+                    </div>
+                    <hr class="border-white/5">
+                    <div>
+                        <p class="text-xs opacity-50">UNIVERSITY</p>
+                        <p class="font-bold">ENS - 1st Year Student</p>
+                        <p class="text-xs text-[#00ff41]">English Literature | C1 Level Proficiency</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-5 bento-card border-l-4 border-l-[#00ff41]">
+                <h3 class="stat-label mb-4">Kinetic Assets</h3>
+                <h2 class="text-3xl font-bold mb-4">MMA Amateur <span class="text-[#00ff41]">6-0</span></h2>
+                <p class="text-sm opacity-60 mb-6">Elite specialist in **Wrestling** and **Judo**. Unbeatable clinch mechanics and explosive takedowns.</p>
+                <div class="flex gap-2">
+                    <span class="bg-white/5 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest">WRESTLING</span>
+                    <span class="bg-white/5 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest">JUDO</span>
+                    <span class="bg-white/5 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest">MMA</span>
+                </div>
+            </div>
+
+            <div class="md:col-span-3 bento-card">
+                <h3 class="stat-label mb-4">Intellectual Passions</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-film text-[#00ff41]"></i>
+                        <p class="text-sm font-bold">Cinephile Extraordinaire</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-book-open text-[#00ff41]"></i>
+                        <p class="text-sm font-bold">Chess & Global Literature</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-globe-americas text-[#00ff41]"></i>
+                        <p class="text-sm font-bold">Geopolitical Analysis</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-12 bento-card bg-[#00ff41] text-black">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div>
+                        <h3 class="text-black font-black text-xs uppercase tracking-[0.3em] mb-2">Systems Deployment</h3>
+                        <h2 class="text-4xl font-extrabold tracking-tight">Full-Stack & Ethical Hacking</h2>
+                    </div>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="bg-black text-white px-4 py-2 rounded-xl text-xs font-bold">CYBERSECURITY</span>
+                        <span class="bg-black text-white px-4 py-2 rounded-xl text-xs font-bold">PYTHON / NODE.JS</span>
+                        <span class="bg-black text-white px-4 py-2 rounded-xl text-xs font-bold">OS ARCHITECTURE</span>
+                        <span class="bg-black text-white px-4 py-2 rounded-xl text-xs font-bold">PEN-TESTING</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="mt-16 py-10 border-t border-white/5 flex justify-between items-center opacity-30 text-[10px] font-bold tracking-[0.4em]">
+            <p>SYSTEM: KAMAL_PRO_ANALYZER_V3.0</p>
+            <p>2026 // ALL RIGHTS RESERVED</p>
+        </footer>
+    </div>
 
 </body>
 </html>
