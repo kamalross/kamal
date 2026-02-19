@@ -1,0 +1,47 @@
+// -- PASSWORD STRENGTH
+let pwVisible=false;
+function analyzePW(){
+  const pw=document.getElementById('pwInput').value;
+  const label=document.getElementById('pwLabel'),meter=document.getElementById('pwMeter'),entEl=document.getElementById('pwEntropy'),crackEl=document.getElementById('pwCrack'),poolEl=document.getElementById('pwPool'),lenEl=document.getElementById('pwLen'),tipsEl=document.getElementById('pwTips');
+  if(!pw){label.textContent='— Enter a password —';label.style.color='var(--text-dim)';meter.style.width='0';entEl.textContent=crackEl.textContent=poolEl.textContent=lenEl.textContent='—';tipsEl.innerHTML='';return;}
+  let pool=0;
+  const hasLower=/[a-z]/.test(pw),hasUpper=/[A-Z]/.test(pw),hasNum=/[0-9]/.test(pw),hasSymbol=/[^a-zA-Z0-9]/.test(pw);
+  if(hasLower)pool+=26;if(hasUpper)pool+=26;if(hasNum)pool+=10;if(hasSymbol)pool+=32;
+  const entropy=Math.round(pw.length*Math.log2(pool||1));
+  const seconds=Math.pow(pool||1,pw.length)/1e12;
+  let crackTime=seconds<60?'< 1 min':seconds<3600?Math.round(seconds/60)+' min':seconds<86400?Math.round(seconds/3600)+' hrs':seconds<31536000?Math.round(seconds/86400)+' days':seconds<3153600000?Math.round(seconds/31536000)+' years':'Centuries+';
+  let score=0;
+  if(pw.length>=8)score++;if(pw.length>=12)score++;if(pw.length>=16)score++;
+  if(hasLower)score++;if(hasUpper)score++;if(hasNum)score++;if(hasSymbol)score+=2;
+  const common=['password','123456','qwerty','abc123','letmein','admin','welcome','iloveyou'];
+  if(common.some(c=>pw.toLowerCase().includes(c)))score-=3;
+  score=Math.max(0,Math.min(score,8));
+  const pct=Math.round(score/8*100);
+  let color,text;
+  if(score<=2){color='#cc2200';text='CRITICAL — Extremely Weak';}
+  else if(score<=4){color='#ff9800';text='WEAK — Easy to Crack';}
+  else if(score<=6){color='#e8c97a';text='MODERATE — Acceptable';}
+  else{color='#4caf50';text='STRONG — Well Secured';}
+  meter.style.width=pct+'%';meter.style.background=color;
+  label.textContent=text;label.style.color=color;
+  entEl.textContent=entropy+' bits';crackEl.textContent=crackTime;poolEl.textContent=pool+' chars';lenEl.textContent=pw.length;
+  tipsEl.innerHTML=[{pass:pw.length>=12,text:'At least 12 characters'},{pass:hasUpper,text:'Contains uppercase letters'},{pass:hasLower,text:'Contains lowercase letters'},{pass:hasNum,text:'Contains numbers'},{pass:hasSymbol,text:'Contains special symbols'},{pass:!common.some(c=>pw.toLowerCase().includes(c)),text:'No common words detected'},{pass:entropy>=50,text:'High entropy (50+ bits)'}].map(t=><div class="pw-tip ${t.pass?'pass':'fail'}">${t.pass?'&#10003;':'&#10007;'} ${t.text}</div>).join('');
+}
+function togglePW(){
+  const i=document.getElementById('pwInput');
+  pwVisible=!pwVisible;
+  i.type=pwVisible?'text':'password';
+  document.getElementById('pwEyeIcon').innerHTML=pwVisible?'<use href="#icon-eye-off"/>':'<use href="#icon-eye"/>';
+}
+
+// -- CALCULATOR
+let calcExpr='';
+function calcInput(v){calcExpr+=v;document.getElementById('calcDisplay').textContent=calcExpr||'0';document.getElementById('calcExpr').textContent='';}
+function calcClear(){calcExpr='';document.getElementById('calcDisplay').textContent='0';document.getElementById('calcExpr').textContent='';}
+function calcBackspace(){calcExpr=calcExpr.slice(0,-1);document.getElementById('calcDisplay').textContent=calcExpr||'0';}
+function calcEquals(){
+  try{
+    let expr=calcExpr.replace(/Math\.sin\(([^)]+)\)/g,(m,a)=>Math.sin(${a}*Math.PI/180)).replace(/Math\.cos\(([^)]+)\)/g,(m,a)=>Math.cos(${a}*Math.PI/180)).replace(/Math\.tan\(([^)]+)\)/g,(m,a)=>Math.tan(${a}*Math.PI/180));
+    const result=Function('"use strict";return ('+expr+')')();
+    document.getElementById('calcExpr').textContent=calcExpr+' =';
+    const display=isNaN(result)||!isFinite(result)?'Error':+parseFloat(result.toFixed(10));
