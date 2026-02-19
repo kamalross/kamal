@@ -3,7 +3,7 @@ let pwVisible=false;
 function analyzePW(){
   const pw=document.getElementById('pwInput').value;
   const label=document.getElementById('pwLabel'),meter=document.getElementById('pwMeter'),entEl=document.getElementById('pwEntropy'),crackEl=document.getElementById('pwCrack'),poolEl=document.getElementById('pwPool'),lenEl=document.getElementById('pwLen'),tipsEl=document.getElementById('pwTips');
-  if(!pw){label.textContent='— Enter a password —';label.style.color='var(--text-dim)';meter.style.width='0';entEl.textContent=crackEl.textContent=poolEl.textContent=lenEl.textContent='—';tipsEl.innerHTML='';return;}
+  if(!pw){label.textContent='â€” Enter a password â€”';label.style.color='var(--text-dim)';meter.style.width='0';entEl.textContent=crackEl.textContent=poolEl.textContent=lenEl.textContent='â€”';tipsEl.innerHTML='';return;}
   let pool=0;
   const hasLower=/[a-z]/.test(pw),hasUpper=/[A-Z]/.test(pw),hasNum=/[0-9]/.test(pw),hasSymbol=/[^a-zA-Z0-9]/.test(pw);
   if(hasLower)pool+=26;if(hasUpper)pool+=26;if(hasNum)pool+=10;if(hasSymbol)pool+=32;
@@ -18,10 +18,10 @@ function analyzePW(){
   score=Math.max(0,Math.min(score,8));
   const pct=Math.round(score/8*100);
   let color,text;
-  if(score<=2){color='#cc2200';text='CRITICAL — Extremely Weak';}
-  else if(score<=4){color='#ff9800';text='WEAK — Easy to Crack';}
-  else if(score<=6){color='#e8c97a';text='MODERATE — Acceptable';}
-  else{color='#4caf50';text='STRONG — Well Secured';}
+  if(score<=2){color='#cc2200';text='CRITICAL â€” Extremely Weak';}
+  else if(score<=4){color='#ff9800';text='WEAK â€” Easy to Crack';}
+  else if(score<=6){color='#e8c97a';text='MODERATE â€” Acceptable';}
+  else{color='#4caf50';text='STRONG â€” Well Secured';}
   meter.style.width=pct+'%';meter.style.background=color;
   label.textContent=text;label.style.color=color;
   entEl.textContent=entropy+' bits';crackEl.textContent=crackTime;poolEl.textContent=pool+' chars';lenEl.textContent=pw.length;
